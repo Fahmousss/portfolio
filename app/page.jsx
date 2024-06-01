@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { Suspense } from "react";
 import data from "../data.json";
-import { ProfileOrganizations } from "./components/orgs";
 import { RecentActivity } from "./components/recent-activity";
 import { getUser } from "./data";
 
@@ -70,7 +69,7 @@ const LandingComponent = async ({ searchParams: { customUsername } }) => {
 							{item.name}
 						</Link>
 					))}
-					<TryYourself customUsername={customUsername} />
+					
 				</ul>
 			</nav>
 			<div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
@@ -84,8 +83,9 @@ const LandingComponent = async ({ searchParams: { customUsername } }) => {
 			<div className="my-16 text-center animate-fade-in">
 				<h2 className="text-lg text-zinc-500">
 					<Suspense fallback={<p>Loading...</p>}>
+						<div className="px-28">
 						<UserText promise={promise} />
-						<ProfileOrganizations username={username} />
+						</div>
 						<RecentActivity username={username} />
 					</Suspense>
 				</h2>

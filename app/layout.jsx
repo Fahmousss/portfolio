@@ -2,6 +2,7 @@ import "../global.css";
 import { Inter } from "next/font/google";
 import LocalFont from "next/font/local";
 import data from "../data.json";
+import  StarsCanvas  from "./components/star-bg";
 
 const username = process.env.GITHUB_USERNAME || data.githubUsername;
 const displayName = data.displayName || username;
@@ -53,8 +54,14 @@ export default function RootLayout({
 					process.env.NODE_ENV === "development" ? "debug-screens" : ''
 				}`}
 			>
-				{children}
+                <div id="otherAnimationContainer">
+                    {children}
+                </div>
+				<div id="starsCanvasContainer">
+                    <StarsCanvas />
+                </div>
 			</body>
+			
 		</html>
 	);
 }
