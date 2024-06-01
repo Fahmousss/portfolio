@@ -83,7 +83,7 @@ const LandingComponent = async ({ searchParams: { customUsername } }) => {
 			<div className="my-16 text-center animate-fade-in">
 				<h2 className="text-lg text-zinc-500">
 					<Suspense fallback={<p>Loading...</p>}>
-						<div className="md:px-28">
+						<div className="md:px-28 sm:text-left">
 						<UserText promise={promise} />
 						</div>
 						<RecentActivity username={username} />
